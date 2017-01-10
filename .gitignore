@@ -61,3 +61,9 @@ gradlew
 gradlew.bat
 settings.gradle
 
+.idea/compiler.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+
+

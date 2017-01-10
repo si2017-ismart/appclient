@@ -1,0 +1,13 @@
+app/build/tmp/*
+.gradle/
+.idea/
+CieParaboleSNotificatio1Uv.iml
+build.gradle
+build/
+gradle.properties
+gradle/
+gradlew
+gradlew.bat
+local.properties
+settings.gradle
+

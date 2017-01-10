@@ -37,6 +37,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.CieParabole.CieParaboleSNotificatio1Uv.DetectionBeacon" >
+        </activity>
 
         <service
             android:name="com.estimote.sdk.service.BeaconService"

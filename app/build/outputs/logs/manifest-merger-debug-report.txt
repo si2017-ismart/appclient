@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:3:5-57
 		INJECTED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml
@@ -18,7 +18,7 @@ ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotif
 	android:name
 		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:5:22-76
 application
-ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:7:5-22:19
+ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:7:5-25:19
 MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\design\23.1.0\AndroidManifest.xml:22:5-20
@@ -53,6 +53,10 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:18:27-74
+activity#com.CieParabole.CieParaboleSNotificatio1Uv.DetectionBeacon
+ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:22:9-24:20
+	android:name
+		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:22:19-50
 uses-sdk
 INJECTED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:20:5-43

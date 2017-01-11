@@ -47,9 +47,6 @@
         </activity>
 
         <service
-            android:name="com.CieParabole.CieParaboleSNotificatio1Uv.ServiceDetection"
-            android:enabled="true" />
-        <service
             android:name="com.estimote.sdk.service.BeaconService"
             android:exported="false" />
         <service android:name="com.estimote.sdk.repackaged.dfu_v0_6_1.no.nordicsemi.android.dfu.DfuBaseService" />

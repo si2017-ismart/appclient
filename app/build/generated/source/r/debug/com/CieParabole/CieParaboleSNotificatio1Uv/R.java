@@ -2226,10 +2226,10 @@ containing a value of this type.
         public static final int beginning=0x7f0c0030;
         public static final int bottom=0x7f0c001c;
         public static final int btn_signup=0x7f0c0073;
-        public static final int button=0x7f0c0079;
-        public static final int button2=0x7f0c0078;
-        public static final int button3=0x7f0c0077;
+        public static final int buttonCANCEL=0x7f0c0078;
         public static final int buttonNON=0x7f0c007d;
+        public static final int buttonNoIntervention=0x7f0c0079;
+        public static final int buttonOK=0x7f0c0077;
         public static final int buttonOUI=0x7f0c007c;
         public static final int buttonPanel=0x7f0c0044;
         public static final int cancel_action=0x7f0c0086;

@@ -90,10 +90,6 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
         ImageButton buttonNon = (ImageButton) findViewById(R.id.buttonNON);
         buttonOui.setOnClickListener(this);
         buttonNon.setOnClickListener(this);
-<<<<<<< HEAD
-
-=======
->>>>>>> abb812995b5256cfbb8e5f0da7df82312ffbc650
         beaconManager.setMonitorNotifier(new MonitorNotifier() {
             @Override
             public void didEnterRegion(Region region) {

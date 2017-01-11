@@ -15,9 +15,13 @@
         android:required="false" />
     <uses-permission
         android:name="android.permission.BLUETOOTH_ADMIN"
+<<<<<<< HEAD
         android:required="false" />
 
     <!-- Needed for Bluetooth scanning on Android M and above. -->
+=======
+        android:required="false" /> <!-- Needed for Bluetooth scanning on Android M and above. -->
+>>>>>>> 4c8ff6e48078c1f8cf285b5ec6fd3ae37187b4bb
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

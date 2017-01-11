@@ -615,7 +615,7 @@ int id homeAsUp 0x7f0c000f
 int id icon 0x7f0c0042
 int id ifRoom 0x7f0c0034
 int id image 0x7f0c003f
-int id imageView 0x7f0c006a
+int id imageView 0x7f0c006b
 int id info 0x7f0c0085
 int id input_first_name 0x7f0c006d
 int id input_last_name 0x7f0c006e
@@ -680,7 +680,7 @@ int id tabMode 0x7f0c000d
 int id text 0x7f0c0084
 int id text2 0x7f0c0082
 int id textSpacerNoButtons 0x7f0c004d
-int id textView 0x7f0c006b
+int id textView 0x7f0c006a
 int id time 0x7f0c0080
 int id title 0x7f0c0043
 int id title_template 0x7f0c0048

@@ -26,6 +26,7 @@ public class BeaconNotificationsManager {
     private HashMap<String, String> enterMessages = new HashMap<>();
     private HashMap<String, String> exitMessages = new HashMap<>();
 
+    private boolean enter=false;
     private Context context;
 
     private int notificationID = 0;
@@ -38,17 +39,18 @@ public class BeaconNotificationsManager {
             public void onEnteredRegion(Region region, List<Beacon> list) {
                 Log.d(TAG, "onEnteredRegion: " + region.getIdentifier());
                 String message = enterMessages.get(region.getIdentifier());
-                if (message != null) {
+                if (message != null && !enter) {
                     showNotification(message);
+                    enter = true;
                 }
             }
 
-            @Override
+           @Override
             public void onExitedRegion(Region region) {
                 Log.d(TAG, "onExitedRegion: " + region.getIdentifier());
                 String message = exitMessages.get(region.getIdentifier());
                 if (message != null) {
-                    showNotification(message);
+                    enter = false;
                 }
             }
         });

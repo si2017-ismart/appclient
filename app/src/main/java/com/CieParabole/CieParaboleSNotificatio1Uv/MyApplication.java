@@ -12,7 +12,7 @@ import com.estimote.sdk.EstimoteSDK;
 
 public class MyApplication extends Application {
 
-    private boolean beaconNotificationsEnabled = false;
+   private boolean beaconNotificationsEnabled = false;
 
     @Override
     public void onCreate() {

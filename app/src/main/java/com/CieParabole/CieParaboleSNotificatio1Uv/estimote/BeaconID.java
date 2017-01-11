@@ -1,5 +1,6 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv.estimote;
 
+import com.estimote.sdk.Beacon;
 import com.estimote.sdk.Region;
 
 import java.util.UUID;
@@ -9,6 +10,10 @@ public class BeaconID {
     private UUID proximityUUID;
     private int major;
     private int minor;
+
+    public static BeaconID fromBeacon(Beacon beacon) {
+        return new BeaconID(beacon.getProximityUUID(), beacon.getMajor(), beacon.getMinor());
+    }
 
     public BeaconID(UUID proximityUUID, int major, int minor) {
         this.proximityUUID = proximityUUID;
@@ -65,4 +70,6 @@ public class BeaconID {
                 && getMajor() == other.getMajor()
                 && getMinor() == other.getMinor();
     }
+
+
 }

@@ -32,7 +32,7 @@
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#ea692c</color>
-    <color name="colorPrimaryDark">#ea692c</color>
+    <color name="colorPrimaryDark">#ffc692</color>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
     <color name="design_fab_shadow_mid_color">#14000000</color>
     <color name="design_fab_shadow_start_color">#44000000</color>
@@ -274,6 +274,7 @@
     <string name="error_no_bluetooth_enabled">To use this app you need to turn on Bluetooth</string>
     <string name="error_no_bluetooth_le">This device does not support Bluetooth Low Energy</string>
     <string name="error_no_location_permission">To use this app you need to grant location permission</string>
+    <string name="helpMessage">Un petit coup de main ?</string>
     <string name="requesting_location_access">Requesting location access</string>
     <string name="requesting_location_access_cancel">I don\'t want to do this now</string>
     <string name="requesting_location_access_ok">Go to settings to enable</string>

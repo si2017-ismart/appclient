@@ -2193,12 +2193,13 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020042;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020043;
         public static final int abc_textfield_search_material=0x7f020044;
-        public static final int beacon=0x7f020045;
-        public static final int design_fab_background=0x7f020046;
-        public static final int design_snackbar_background=0x7f020047;
-        public static final int logo=0x7f020048;
-        public static final int notification_template_icon_bg=0x7f02004a;
-        public static final int weguide_fondappli=0x7f020049;
+        public static final int background=0x7f020045;
+        public static final int beacon=0x7f020046;
+        public static final int design_fab_background=0x7f020047;
+        public static final int design_snackbar_background=0x7f020048;
+        public static final int logo=0x7f020049;
+        public static final int notification_template_icon_bg=0x7f02004b;
+        public static final int weguide_fondappli=0x7f02004a;
     }
     public static final class id {
         public static final int action0=0x7f0c007a;
@@ -2426,12 +2427,13 @@ containing a value of this type.
         public static final int error_no_bluetooth_enabled=0x7f060017;
         public static final int error_no_bluetooth_le=0x7f060018;
         public static final int error_no_location_permission=0x7f060019;
-        public static final int requesting_location_access=0x7f06001a;
-        public static final int requesting_location_access_cancel=0x7f06001b;
-        public static final int requesting_location_access_ok=0x7f06001c;
-        public static final int requesting_location_access_rationale=0x7f06001d;
-        public static final int requesting_location_permission=0x7f06001e;
-        public static final int requesting_location_permission_rationale=0x7f06001f;
+        public static final int helpMessage=0x7f06001a;
+        public static final int requesting_location_access=0x7f06001b;
+        public static final int requesting_location_access_cancel=0x7f06001c;
+        public static final int requesting_location_access_ok=0x7f06001d;
+        public static final int requesting_location_access_rationale=0x7f06001e;
+        public static final int requesting_location_permission=0x7f06001f;
+        public static final int requesting_location_permission_rationale=0x7f060020;
         public static final int status_bar_notification_info_overflow=0x7f060013;
     }
     public static final class style {

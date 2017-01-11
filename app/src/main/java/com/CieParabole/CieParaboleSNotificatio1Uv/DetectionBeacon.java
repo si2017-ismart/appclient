@@ -1,97 +1,124 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
-import android.app.ProgressDialog;
+
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.support.v7.app.AlertDialog;
+import android.os.RemoteException;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.CieParabole.CieParaboleSNotificatio1Uv.MyApplication;
-import com.CieParabole.CieParaboleSNotificatio1Uv.R;
-import com.CieParabole.CieParaboleSNotificatio1Uv.estimote.BeaconID;
-import com.CieParabole.CieParaboleSNotificatio1Uv.estimote.EstimoteCloudBeaconDetails;
-import com.CieParabole.CieParaboleSNotificatio1Uv.estimote.EstimoteCloudBeaconDetailsFactory;
-import com.CieParabole.CieParaboleSNotificatio1Uv.estimote.ProximityContentManager;
-import com.estimote.sdk.SystemRequirementsChecker;
-import com.estimote.sdk.cloud.model.Color;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
-public class DetectionBeacon extends AppCompatActivity{
+import org.altbeacon.beacon.Beacon;
+import org.altbeacon.beacon.BeaconConsumer;
+import org.altbeacon.beacon.BeaconManager;
+import org.altbeacon.beacon.BeaconParser;
+import org.altbeacon.beacon.MonitorNotifier;
+import org.altbeacon.beacon.RangeNotifier;
+import org.altbeacon.beacon.Region;
 
 
+import java.util.Collection;
 
-    private static final String TAG = "MainActivity";
 
-    private static final Map<Color, Integer> BACKGROUND_COLORS = new HashMap<>();
+public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer{
 
-    private static final int BACKGROUND_COLOR_NEUTRAL = android.graphics.Color.rgb(188, 15, 92);
+    public static final String TAG = "BeaconsEverywhere";
+    private BeaconManager beaconManager;
+    private int notificationID = 0;
 
-    private ProximityContentManager proximityContentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detection);
 
-        proximityContentManager = new ProximityContentManager(this,
-                Arrays.asList(
-                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 44321, 38148),
-                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 121, 6227),
-                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 49647, 21143)),
-                new EstimoteCloudBeaconDetailsFactory());
-        proximityContentManager.setListener(new ProximityContentManager.Listener() {
-            @Override
-            public void onContentChanged(Object content) {
-                String text;
-                if (content != null) {
-                    EstimoteCloudBeaconDetails beaconDetails = (EstimoteCloudBeaconDetails) content;
-                    text = "You're in " + beaconDetails.getBeaconName() + "'s range!";
-                } else {
-                    text = "No beacons in range.";
-                }
-                ((TextView) findViewById(R.id.textView)).setText(text);
-            }
-        });
-    }
+        beaconManager = BeaconManager.getInstanceForApplication(this);
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+        beaconManager.getBeaconParsers().add(new BeaconParser()
+                .setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
 
-        if (!SystemRequirementsChecker.checkWithDefaultDialogs(this)) {
-            Log.e(TAG, "Can't scan for beacons, some pre-conditions were not met");
-            Log.e(TAG, "Read more about what's required at: http://estimote.github.io/Android-SDK/JavaDocs/com/estimote/sdk/SystemRequirementsChecker.html");
-            Log.e(TAG, "If this is fixable, you should see a popup on the app's screen right now, asking to enable what's necessary");
-        } else {
-            Log.d(TAG, "Starting ProximityContentManager content updates");
-            proximityContentManager.startContentUpdates();
-        }
-    }
+        beaconManager.bind(this);
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(TAG, "Stopping ProximityContentManager content updates");
-        proximityContentManager.stopContentUpdates();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        proximityContentManager.destroy();
+        beaconManager.unbind(this);
+    }
+
+    @Override
+    public void onBeaconServiceConnect() {
+        final Region region = new Region("myBeaons",null, null, null);
+
+        beaconManager.setMonitorNotifier(new MonitorNotifier() {
+            @Override
+            public void didEnterRegion(Region region) {
+                try {
+                    Log.d(TAG, "didEnterRegion");
+                    beaconManager.startRangingBeaconsInRegion(region);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void didExitRegion(Region region) {
+                try {
+                    notificationID = 0;
+                    Log.d(TAG, "didExitRegion");
+                    beaconManager.stopRangingBeaconsInRegion(region);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void didDetermineStateForRegion(int i, Region region) {
+
+            }
+        });
+
+        beaconManager.setRangeNotifier(new RangeNotifier() {
+            @Override
+            public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
+                for (Beacon oneBeacon : beacons) {
+                    Log.d(TAG, "distance: " + oneBeacon.getDistance() + " id:" + oneBeacon.getId1() + "/" + oneBeacon.getId2() + "/" + oneBeacon.getId3());
+                    if(notificationID == 0){
+                        addNotification();
+                    }
+
+                }
+            }
+        });
+
+        try {
+            beaconManager.startMonitoringBeaconsInRegion(region);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+    }
+    private void addNotification() {
+        Intent resultIntent = new Intent(this, DetectionBeacon.class);
+        PendingIntent resultPendingIntent = PendingIntent.getActivity(
+                this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle("WeGuide")
+                .setContentText("Beacon détecté")
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setContentIntent(resultPendingIntent);
+
+        NotificationManager notificationManager =
+                (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(notificationID++, builder.build());
+
     }
 
 }

@@ -2,17 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/weguide_fondappli"
-    android:id="@+id/relativeLayout">
-
-
+    android:id="@+id/relativeLayout"
+    android:background="@drawable/background">
 
     <ImageView
-        android:layout_height="100dp"
+        android:layout_height="300dp"
         android:layout_width="wrap_content"
         android:id="@+id/imageView"
         android:src="@drawable/logo"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"/>
 
@@ -25,7 +23,13 @@
         android:textColor="#ffffff"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textAlignment="center"
-        android:text="Looking for beacons …"
+        android:text="Recherche de Beacons..."
         android:layout_below="@+id/imageView"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="OUI"/>
 
 </RelativeLayout>

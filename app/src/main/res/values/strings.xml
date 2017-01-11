@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WeGuide</string>
+    <string name="helpMessage">Un petit coup de main ?</string>
 </resources>

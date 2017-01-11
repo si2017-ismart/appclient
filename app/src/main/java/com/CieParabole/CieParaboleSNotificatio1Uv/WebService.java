@@ -35,14 +35,14 @@ public class WebService {
 
     }
 
-    public void addBeacon(String idEtablissement, String id, String nom){
+    public void addBeacon(final String idEtablissement, final String id, final String nom){
         new Thread(new Runnable() {
             @Override
             public void run() {
                 Map<String, String> parameters = new HashMap<String, String>();
-                parameters.put("id_etablissement", "58762e61ff237cba2f192370");
-                parameters.put("id", "b9407f30-f5f8-466e-aff9-abcdefghijkl");
-                parameters.put("nom", "porte test");
+                parameters.put("id_etablissement", idEtablissement);
+                parameters.put("id", id);
+                parameters.put("nom", nom);
                 urlStr = "http://10.0.2.2:3000/api/beacons/add";
                 sendPost(parameters);
             }

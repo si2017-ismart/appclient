@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+>>>>>>> c4a35785e9aae7d2dfbf407a09bb4dcc91a3ff97
     android:layout_height="match_parent"
     android:id="@+id/find"
     tools:context=".DetectionBeacon"
     android:background="@drawable/background">
 
     <ImageView
-        android:layout_height="300dp"
+        android:layout_height="257dp"
         android:layout_width="wrap_content"
         android:id="@+id/imageViewFind"
         android:src="@drawable/logo"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="-40dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"/>
 
@@ -21,19 +26,44 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/textViewFind"
-        android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_marginTop="-20dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="30dp"
+        android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textAlignment="center"
         android:text="Un petit coup de main ?"
         android:layout_below="@+id/imageView"/>
 
+<<<<<<< HEAD
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/buttonOUI"
         android:text="OUI"/>
+=======
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@null"
+        android:src="@drawable/oui"
+        android:id="@+id/imageButton"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/nonmerci"
+        android:scaleType="fitXY"
+        android:id="@+id/imageButton2" />
+
+>>>>>>> c4a35785e9aae7d2dfbf407a09bb4dcc91a3ff97
 
 
 </LinearLayout>

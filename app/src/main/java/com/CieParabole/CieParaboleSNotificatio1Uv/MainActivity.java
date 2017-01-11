@@ -77,7 +77,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         //
                         // ------------------------
                         saveData();
-
+                        Intent intent = new Intent(MainActivity.this, DetectionBeacon.class);
+                        startActivity(intent);
+                        finish();
                         Thread.sleep(1000);
                     } catch (Exception e) {
 

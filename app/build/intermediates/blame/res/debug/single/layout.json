@@ -56,12 +56,12 @@
         "source": "C:\\Users\\jadhaddad\\AndroidStudioProjects\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_tab_text.xml"
-    },
-    {
         "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
         "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_tab_text.xml"
     },
     {
         "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",

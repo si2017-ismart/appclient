@@ -50,7 +50,7 @@ public class WebService {
     }
 
     public ArrayList<String> getAllBeacons(){
-        ArrayList<String> beacons = null;
+        ArrayList<String> beacons = new ArrayList<String>();
         urlStr = "http://10.0.2.2:3000/api/beacons/";
         final ArrayList<String> beaconIds = new ArrayList<String>();
         Thread t1 = new Thread(new Runnable() {
@@ -66,6 +66,7 @@ public class WebService {
             JSONArray jsonArray = new JSONArray(jsonStr);
 
             for (int i = 0; i < jsonArray.length(); i++) {
+                Log.d("BEACON", jsonArray.getJSONObject(i).getString("id_beacon"));
                 beacons.add(jsonArray.getJSONObject(i).getString("id_beacon"));
             }
         } catch (InterruptedException e) {

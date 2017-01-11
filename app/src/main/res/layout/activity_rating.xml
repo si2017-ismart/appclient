@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_height="257dp"
+        android:layout_width="wrap_content"
+        android:id="@+id/imageViewFind"
+        android:src="@drawable/logo"
+        android:layout_marginTop="-40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"/>
+    <RatingBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:id="@+id/ratingBar" />
+
+    <TextView
+        android:text="Notez le service proposé"
+        android:layout_width="wrap_content"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/textView2" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+
+        <Button
+            android:text="OK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="annuler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+    <Button
+        android:text="pas d'Intervention"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button" />
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+</LinearLayout>

@@ -52,4 +52,9 @@
         android:scaleType="fitXY"
         android:id="@+id/buttonNON" />
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> abb812995b5256cfbb8e5f0da7df82312ffbc650
 </LinearLayout>

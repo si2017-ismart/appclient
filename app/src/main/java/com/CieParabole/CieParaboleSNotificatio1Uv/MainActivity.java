@@ -27,12 +27,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String keyFirstName = "firstNameKey";
     public static final String keyLastName = "lastNameKey";
-    //    public static final String keyEmail = "emailKey";
     public static final String keyGender = "genderKey";
 
     private EditText ETFirstName;
     private EditText ETLastName;
-    //    private EditText ETEmail;
     private RadioGroup RGGender;
     private RadioButton RBMale;
     private RadioButton RBFemale;
@@ -55,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ETFirstName = (EditText)findViewById(R.id.input_first_name);
         ETLastName  = (EditText)findViewById(R.id.input_last_name);
-//        ETEmail     = (EditText)findViewById(R.id.input_email);
         RGGender    = (RadioGroup)findViewById(R.id.radio_group_gender);
         RBMale      = (RadioButton)findViewById(R.id.radioButtonMale);
         RBFemale    = (RadioButton)findViewById(R.id.radioButtonFemale);
@@ -77,7 +74,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         //
                         // ------------------------
                         saveData();
-
+                        Intent intent = new Intent(MainActivity.this, DetectionBeacon.class);
+                        startActivity(intent);
+                        finish();
+                        // remove later
                         Thread.sleep(1000);
                     } catch (Exception e) {
 
@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(ETFirstName.getText().toString().isEmpty() ||
                 ETLastName.getText().toString().isEmpty() ||
-//                ETEmail.getText().toString().isEmpty()||
                 RGGender.getCheckedRadioButtonId() == -1){
             allFilled = false;
         }else{
@@ -111,10 +110,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void saveData(){
-        String fname, lname, email, gender;
+        String fname, lname, gender;
         fname = ETFirstName.getText().toString();
         lname = ETLastName.getText().toString();
-//        email = ETEmail.getText().toString();
         if(RGGender.getCheckedRadioButtonId() == RBFemale.getId())
             gender = "female";
         else{
@@ -123,9 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(keyFirstName, fname);
         editor.putString(keyLastName, lname);
-//        editor.putString(keyEmail, email);
         editor.putString(keyGender, gender);
         editor.commit();
     }
-
 }

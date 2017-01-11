@@ -23,6 +23,11 @@
 
         <activity android:name=".DetectionBeacon">
         </activity>
+
+        <service
+            android:name=".ServiceDetection"
+            android:enabled="true" />
+
     </application>
 
 </manifest>

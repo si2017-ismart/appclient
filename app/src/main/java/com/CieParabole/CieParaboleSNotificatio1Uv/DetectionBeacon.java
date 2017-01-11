@@ -1,15 +1,22 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
 
+import android.app.Activity;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.RemoteException;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import org.altbeacon.beacon.Beacon;
 import org.altbeacon.beacon.BeaconConsumer;
@@ -53,7 +60,7 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     @Override
     public void onBeaconServiceConnect() {
         final Region region = new Region("myBeaons",null, null, null);
-
+        setContentView(R.layout.activty_detection_find);
         beaconManager.setMonitorNotifier(new MonitorNotifier() {
             @Override
             public void didEnterRegion(Region region) {
@@ -87,8 +94,8 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
             public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
                 for (Beacon oneBeacon : beacons) {
                     Log.d(TAG, "distance: " + oneBeacon.getDistance() + " id:" + oneBeacon.getId1() + "/" + oneBeacon.getId2() + "/" + oneBeacon.getId3());
-                    if(notificationID == 0){
-                        addNotification();
+                    if (notificationID == 0) {
+                                addNotification();
                     }
 
                 }
@@ -118,6 +125,7 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
         NotificationManager notificationManager =
                 (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(notificationID++, builder.build());
+
 
     }
 

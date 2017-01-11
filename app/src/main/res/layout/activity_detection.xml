@@ -13,10 +13,6 @@
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"/>
-<<<<<<< HEAD
-=======
-
->>>>>>> c4a35785e9aae7d2dfbf407a09bb4dcc91a3ff97
 
     <TextView
         android:layout_height="wrap_content"

@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -64,7 +65,7 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     public void onBeaconServiceConnect() {
         final Region region = new Region("myBeaons",null, null, null);
         setContentView(R.layout.activty_detection_find);
-        Button button = (Button) findViewById(R.id.buttonOUI);
+        ImageButton button = (ImageButton) findViewById(R.id.ButtonOUI);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 callWebService();
@@ -101,12 +102,17 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
         beaconManager.setRangeNotifier(new RangeNotifier() {
             @Override
             public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
+                double m=0;
+                if (notificationID == 0) {
+                    addNotification();
+                }
                 for (Beacon oneBeacon : beacons) {
-                    Log.d(TAG, "distance: " + oneBeacon.getDistance() + " id:" + oneBeacon.getId1() + "/" + oneBeacon.getId2() + "/" + oneBeacon.getId3());
-                    id = oneBeacon.getId1().toString() + oneBeacon.getId2().toString() + oneBeacon.getId3().toString();
-                    if (notificationID == 0) {
-                        addNotification();
+                    m = oneBeacon.getDistance();
+                    if(m<oneBeacon.getDistance()){
+                        id = oneBeacon.getId1().toString() + oneBeacon.getId2().toString() + oneBeacon.getId3().toString();
                     }
+                    Log.d(TAG, "distance: " + oneBeacon.getDistance() + " id:" + oneBeacon.getId1() + "/" + oneBeacon.getId2() + "/" + oneBeacon.getId3());
+
 
                 }
             }
@@ -117,6 +123,8 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+
+
 
     }
     private void addNotification() {

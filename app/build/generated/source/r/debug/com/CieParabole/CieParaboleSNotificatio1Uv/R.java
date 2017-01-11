@@ -2330,8 +2330,12 @@ containing a value of this type.
         public static final int text2=0x7f0c0086;
         public static final int textSpacerNoButtons=0x7f0c004d;
         public static final int textView=0x7f0c006b;
+<<<<<<< HEAD
         public static final int textViewFind=0x7f0c0076;
         public static final int time=0x7f0c0084;
+=======
+        public static final int time=0x7f0c0081;
+>>>>>>> 8089ff4201f7c322e0652010056790f72067d5fd
         public static final int title=0x7f0c0043;
         public static final int title_template=0x7f0c0048;
         public static final int top=0x7f0c0025;

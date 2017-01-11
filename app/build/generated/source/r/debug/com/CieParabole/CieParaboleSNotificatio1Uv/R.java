@@ -2204,8 +2204,11 @@ containing a value of this type.
         public static final int weguide_fondappli=0x7f02004c;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int ButtonNON=0x7f0c0078;
         public static final int ButtonOUI=0x7f0c0077;
+=======
+>>>>>>> 32d026f2064115a7881c0a0ad11eb5c356c0dc0e
         public static final int action0=0x7f0c0080;
         public static final int action_bar=0x7f0c005a;
         public static final int action_bar_activity_content=0x7f0c0000;
@@ -2228,6 +2231,11 @@ containing a value of this type.
         public static final int beginning=0x7f0c0030;
         public static final int bottom=0x7f0c001c;
         public static final int btn_signup=0x7f0c0073;
+<<<<<<< HEAD
+=======
+        public static final int buttonNON=0x7f0c0078;
+        public static final int buttonOUI=0x7f0c0077;
+>>>>>>> 32d026f2064115a7881c0a0ad11eb5c356c0dc0e
         public static final int buttonPanel=0x7f0c0044;
         public static final int cancel_action=0x7f0c0081;
         public static final int center=0x7f0c001d;

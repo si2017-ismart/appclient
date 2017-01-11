@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+<<<<<<< HEAD
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+>>>>>>> 32d026f2064115a7881c0a0ad11eb5c356c0dc0e
     android:layout_height="match_parent"
     android:id="@+id/find"
     tools:context=".DetectionBeacon"
@@ -32,12 +36,20 @@
         android:text="Un petit coup de main ?"
         android:layout_below="@+id/imageView"/>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 32d026f2064115a7881c0a0ad11eb5c356c0dc0e
     <ImageButton
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@null"
         android:src="@drawable/oui"
+<<<<<<< HEAD
         android:id="@+id/ButtonOUI"
+=======
+        android:id="@+id/buttonOUI"
+>>>>>>> 32d026f2064115a7881c0a0ad11eb5c356c0dc0e
         android:layout_gravity="center_horizontal"
         android:scaleType="fitXY" />
 
@@ -49,6 +61,12 @@
         android:layout_gravity="center_horizontal"
         android:src="@drawable/nonmerci"
         android:scaleType="fitXY"
+<<<<<<< HEAD
         android:id="@+id/ButtonNON" />
+=======
+        android:id="@+id/buttonNON" />
+
+
+>>>>>>> 32d026f2064115a7881c0a0ad11eb5c356c0dc0e
 
 </LinearLayout>

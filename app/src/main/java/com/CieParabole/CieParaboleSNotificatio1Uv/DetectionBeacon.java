@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 
-public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer{
+public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer,View.OnClickListener{
 
     public static final String TAG = "BeaconsEverywhere";
     private BeaconManager beaconManager;
@@ -62,15 +62,36 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     }
 
     @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id){
+            case R.id.buttonOUI:
+                callWebService();
+                break;
+            case R.id.buttonNON:
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
+                break;
+        }
+    }
+
+    @Override
     public void onBeaconServiceConnect() {
         final Region region = new Region("myBeaons",null, null, null);
         setContentView(R.layout.activty_detection_find);
+<<<<<<< HEAD
         ImageButton button = (ImageButton) findViewById(R.id.ButtonOUI);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 callWebService();
             }
         });
+=======
+        ImageButton buttonOui = (ImageButton) findViewById(R.id.buttonOUI);
+        ImageButton buttonNon = (ImageButton) findViewById(R.id.buttonNON);
+        buttonOui.setOnClickListener(this);
+        buttonNon.setOnClickListener(this);
+>>>>>>> 32d026f2064115a7881c0a0ad11eb5c356c0dc0e
         beaconManager.setMonitorNotifier(new MonitorNotifier() {
             @Override
             public void didEnterRegion(Region region) {

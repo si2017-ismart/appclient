@@ -1,5 +1,7 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -28,6 +30,12 @@ public class WebService {
     private static String urlStr = "";
     private static final char PARAMETER_DELIMITER = '&';
     private static final char PARAMETER_EQUALS_CHAR = '=';
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String keyFirstName = "firstNameKey";
+    public static final String keyGender = "genderKey";
+    //fix this
+    private String profil = "moteur";
+
 
 
 
@@ -49,8 +57,32 @@ public class WebService {
         }).start();
     }
 
+    public String requestHelp(Context context, String beaconID){
+        final ArrayList<String> token = new ArrayList<String>();
+        String tokenString = null;
+        SharedPreferences sharedPreferences = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String name = sharedPreferences.getString(keyFirstName,null);
+        String gender = sharedPreferences.getString(keyGender,null);
+        urlStr = "http://10.0.2.2:3000/api/beacons/needHelp/"+profil+"/"+name+"/"+gender+"/"+beaconID;
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Get(token);
+            }
+        });
+        t1.start();
+        try{
+            t1.join();
+            tokenString = token.get(0);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return tokenString;
+    }
+
     public ArrayList<String> getAllBeacons(){
-        ArrayList<String> beacons = null;
+        ArrayList<String> beacons = new ArrayList<String>();
         urlStr = "http://10.0.2.2:3000/api/beacons/";
         final ArrayList<String> beaconIds = new ArrayList<String>();
         Thread t1 = new Thread(new Runnable() {
@@ -66,6 +98,7 @@ public class WebService {
             JSONArray jsonArray = new JSONArray(jsonStr);
 
             for (int i = 0; i < jsonArray.length(); i++) {
+                Log.d("BEACON", jsonArray.getJSONObject(i).getString("id_beacon"));
                 beacons.add(jsonArray.getJSONObject(i).getString("id_beacon"));
             }
         } catch (InterruptedException e) {
@@ -99,7 +132,6 @@ public class WebService {
         }
         return exists;
     }
-
 
     private void Get(ArrayList<String> arraylist){
         String result = "";

@@ -13,8 +13,12 @@
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"/>
+<<<<<<< HEAD
 
     <TextView
+=======
+<TextView
+>>>>>>> 32d026f2064115a7881c0a0ad11eb5c356c0dc0e
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/textView"

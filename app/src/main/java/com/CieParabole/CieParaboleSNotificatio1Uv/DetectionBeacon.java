@@ -32,6 +32,7 @@ import org.altbeacon.beacon.Region;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Timer;
 
 
 public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer,View.OnClickListener{
@@ -40,11 +41,14 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     private BeaconManager beaconManager;
     private int notificationID = 0;
     private String id;
+    private String tokenSession = null;
+    WebService service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detection);
+        WebService service = new WebService();
 
         beaconManager = BeaconManager.getInstanceForApplication(this);
 
@@ -53,6 +57,9 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
 
         beaconManager.bind(this);
 
+        if(tokenSession != null){
+            setTimer();
+        }
     }
 
     @Override
@@ -79,19 +86,11 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     public void onBeaconServiceConnect() {
         final Region region = new Region("myBeaons",null, null, null);
         setContentView(R.layout.activty_detection_find);
-<<<<<<< HEAD
-        ImageButton button = (ImageButton) findViewById(R.id.ButtonOUI);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                callWebService();
-            }
-        });
-=======
         ImageButton buttonOui = (ImageButton) findViewById(R.id.buttonOUI);
         ImageButton buttonNon = (ImageButton) findViewById(R.id.buttonNON);
         buttonOui.setOnClickListener(this);
         buttonNon.setOnClickListener(this);
->>>>>>> 32d026f2064115a7881c0a0ad11eb5c356c0dc0e
+
         beaconManager.setMonitorNotifier(new MonitorNotifier() {
             @Override
             public void didEnterRegion(Region region) {
@@ -169,10 +168,10 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     }
 
     private void callWebService(){
-        WebService service = new WebService();
         ArrayList<String> list = service.getAllBeacons();
         if(checkbeacon(list)){
-            Toast.makeText(getApplicationContext(), "CHECKED", Toast.LENGTH_LONG).show();
+            tokenSession = service.requestHelp(this,id);
+            setTimer();
         }
     }
 
@@ -187,5 +186,24 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
 
     }
 
+    public void setTimer(){
+        TokenCheckTimer timerTask = new TokenCheckTimer(service,tokenSession);
+        //running timer task as daemon thread
+        Timer timer = new Timer(true);
+        timer.scheduleAtFixedRate(timerTask, 0, 10 * 1000);
+        try {
+            Thread.sleep(120000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        timer.cancel();
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 
 }

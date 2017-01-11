@@ -2260,7 +2260,7 @@ containing a value of this type.
         public static final int icon=0x7f0c0042;
         public static final int ifRoom=0x7f0c0034;
         public static final int image=0x7f0c003f;
-        public static final int imageView=0x7f0c006a;
+        public static final int imageView=0x7f0c006b;
         public static final int info=0x7f0c0085;
         public static final int input_first_name=0x7f0c006d;
         public static final int input_last_name=0x7f0c006e;
@@ -2325,7 +2325,7 @@ containing a value of this type.
         public static final int text=0x7f0c0084;
         public static final int text2=0x7f0c0082;
         public static final int textSpacerNoButtons=0x7f0c004d;
-        public static final int textView=0x7f0c006b;
+        public static final int textView=0x7f0c006a;
         public static final int time=0x7f0c0080;
         public static final int title=0x7f0c0043;
         public static final int title_template=0x7f0c0048;

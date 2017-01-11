@@ -1,11 +1,11 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.nio.charset.Charset;
 import java.util.Map;
 
 /**
@@ -17,28 +17,36 @@ public class WebService {
     private static final char PARAMETER_DELIMITER = '&';
     private static final char PARAMETER_EQUALS_CHAR = '=';
     private String postParameters;
+    Map<String, String> parameters;
 
 
     public WebService(){
+
+    }
+
+    public void sendPost(){
+
         try {
             URL urlToRequest = new URL(urlStr);
             HttpURLConnection urlConnection = (HttpURLConnection) urlToRequest.openConnection();
             urlConnection.setDoOutput(true);
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-
+            postParameters = createQueryStringForParameters(parameters);
             urlConnection.setFixedLengthStreamingMode(postParameters.getBytes().length);
+
+            //send the POST
             PrintWriter out = new PrintWriter(urlConnection.getOutputStream());
             out.print(postParameters);
             out.close();
 
-        }catch(Exception e){
-
+        } catch(IOException e) {
+            e.printStackTrace();
         }
-
     }
 
-    public static String createQueryStringForParameters(Map<String, String> parameters) {
+
+    private static String createQueryStringForParameters(Map<String, String> parameters) {
         StringBuilder parametersAsQueryString = new StringBuilder();
         if (parameters != null) {
             boolean firstParameter = true;

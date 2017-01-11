@@ -30,6 +30,7 @@ public class WebService {
     private static String urlStr = "";
     private static final char PARAMETER_DELIMITER = '&';
     private static final char PARAMETER_EQUALS_CHAR = '=';
+    private String postResult = "";
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String keyFirstName = "firstNameKey";
     public static final String keyGender = "genderKey";
@@ -41,6 +42,57 @@ public class WebService {
 
     public WebService(){
 
+    }
+
+    public boolean newPosition(final String token, final String beaconID){
+        boolean newPosition = false;
+        urlStr = "http://10.0.2.2:3000/api/etablissements/sessions/setBeacon";
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Map<String, String> parameters = new HashMap<String, String>();
+                parameters.put("id_beacon", beaconID);
+                parameters.put("token", token);
+                sendPost(parameters);
+            }
+        });
+        t1.start();
+        try{
+            t1.join();
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (postResult.equals("true")){
+            newPosition = true;
+        }
+
+        return newPosition;
+    }
+
+    public boolean checkToken(String token){
+        boolean tokenValid = false;
+        urlStr = "http://10.0.2.2:3000/api/etablissements/sessions/checkToken/"+token;
+        final ArrayList<String> tokenList = new ArrayList<String>();
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Get(tokenList);
+            }
+        });
+
+        t1.start();
+        try{
+            t1.join();
+            String result = tokenList.get(0);
+            if(result.equals("true")){
+                tokenValid = true;
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return tokenValid;
     }
 
     public void addBeacon(final String idEtablissement, final String id, final String nom){
@@ -180,6 +232,7 @@ public class WebService {
             out.close();
 
             String str = readInputStreamToString(urlConnection);
+            postResult = str;
             Log.d("post response", str);
 
         } catch(IOException e) {

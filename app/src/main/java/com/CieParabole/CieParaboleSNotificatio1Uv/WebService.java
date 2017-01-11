@@ -1,30 +1,116 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
+import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * Created by jadhaddad on 1/11/17.
  */
 
 public class WebService {
-    private static final String urlStr = "";
+    private static String urlStr = "";
     private static final char PARAMETER_DELIMITER = '&';
     private static final char PARAMETER_EQUALS_CHAR = '=';
-    private String postParameters;
-    Map<String, String> parameters;
+
 
 
     public WebService(){
 
     }
 
-    public void sendPost(){
+    public void addBeacon(){//String idEtablissement, String id, String nom){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Map<String, String> parameters = new HashMap<String, String>();
+                parameters.put("id_etablissement", "58762e61ff237cba2f192370");
+                parameters.put("id", "b9407f30-f5f8-466e-aff9-abcdefghijkl");
+                parameters.put("nom", "porte test");
+                urlStr = "http://10.0.2.2:3000/api/beacons/add";
+                sendPost(parameters);
+            }
+        }).start();
+    }
+
+    public void getAllBeacons(){
+        String [] beaconsId;
+        urlStr = "http://10.0.2.2:3000/api/beacons/";
+        String result;
+        final ArrayList<String> beaconIds = new ArrayList<String>();
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Get(beaconIds);
+            }
+        });
+        t1.start();
+        try {
+            t1.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Log.d("tesstt",beaconIds.toString());
+    }
+
+
+
+    private void Get(ArrayList<String> arraylist){
+        String result = "";
+        URL url;
+        HttpURLConnection urlConnection = null;
+        try {
+            url = new URL(urlStr);
+
+            urlConnection = (HttpURLConnection) url.openConnection();
+
+            InputStream in = urlConnection.getInputStream();
+
+            InputStreamReader isw = new InputStreamReader(in);
+
+            int data = isw.read();
+            result = "";
+            while (data != -1) {
+                char current = (char) data;
+                data = isw.read();
+                result+= current;
+            }
+            Log.d("GET RESPONSE", result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+        }
+        arraylist.add(result);
+    }
+
+    private static String getResponseText(InputStream inStream) {
+        // very nice trick from
+        // http://weblogs.java.net/blog/pat/archive/2004/10/stupid_scanner_1.html
+        return new Scanner(inStream).useDelimiter("\\A").next();
+    }
+
+    private void sendPost(Map<String, String> parameters){
 
         try {
             URL urlToRequest = new URL(urlStr);
@@ -32,7 +118,7 @@ public class WebService {
             urlConnection.setDoOutput(true);
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-            postParameters = createQueryStringForParameters(parameters);
+            String postParameters = createQueryStringForParameters(parameters);
             urlConnection.setFixedLengthStreamingMode(postParameters.getBytes().length);
 
             //send the POST
@@ -40,11 +126,44 @@ public class WebService {
             out.print(postParameters);
             out.close();
 
+            String str = readInputStreamToString(urlConnection);
+            Log.d("post response", str);
+
         } catch(IOException e) {
             e.printStackTrace();
         }
     }
+    private String readInputStreamToString(HttpURLConnection connection) {
+        String result = null;
+        StringBuffer sb = new StringBuffer();
+        InputStream is = null;
 
+        try {
+            is = new BufferedInputStream(connection.getInputStream());
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String inputLine = "";
+            while ((inputLine = br.readLine()) != null) {
+                sb.append(inputLine);
+            }
+            result = sb.toString();
+        }
+        catch (Exception e) {
+            Log.i("webservcie", "Error reading InputStream");
+            result = null;
+        }
+        finally {
+            if (is != null) {
+                try {
+                    is.close();
+                }
+                catch (IOException e) {
+                    Log.i("webservice", "Error closing InputStream");
+                }
+            }
+        }
+
+        return result;
+    }
 
     private static String createQueryStringForParameters(Map<String, String> parameters) {
         StringBuilder parametersAsQueryString = new StringBuilder();

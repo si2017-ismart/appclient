@@ -13,11 +13,13 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
-        <!--<ImageView android:src="@drawable/logo"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="72dp"-->
-        <!--android:layout_marginBottom="24dp"-->
-        <!--android:layout_gravity="center_horizontal" />-->
+        <ImageView android:src="@drawable/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="0dp"
+        android:layout_gravity="center_horizontal"
+            android:id="@+id/imageView2" />
 
         <!--  First Name Label -->
 
@@ -34,13 +36,6 @@
             android:layout_height="wrap_content"
             android:inputType="textCapWords"
             android:hint="Last Name" />
-
-        <!-- Email Label -->
-        <!--<EditText android:id="@+id/input_email"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:inputType="textEmailAddress"-->
-        <!--android:hint="Email" />-->
 
 
         <!-- Signup Button -->

@@ -36,26 +36,16 @@
         "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/anim/abc_popup_exit.xml"
     },
     {
-<<<<<<< HEAD
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\anim\\abc_slide_out_bottom.xml"
-=======
         "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
         "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/anim/abc_popup_enter.xml"
->>>>>>> 215f2e798d512c02a27b25e34dfd472a3c4975bd
     },
     {
         "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
         "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/res/anim/design_fab_out.xml"
     },
     {
-<<<<<<< HEAD
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
-=======
         "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
         "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/anim/abc_grow_fade_in_from_bottom.xml"
->>>>>>> 215f2e798d512c02a27b25e34dfd472a3c4975bd
     },
     {
         "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",

@@ -16,55 +16,6 @@ ADDED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/AndroidManifest.xml:5:5-79
 	android:name
-<<<<<<< HEAD
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:5:22-76
-uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:6:5-66
-MERGED from [com.estimote:sdk:0.10.8] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.estimote\sdk\0.10.8\AndroidManifest.xml:15:5-67
-	android:name
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:6:22-64
-application
-ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:8:5-25:19
-MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\design\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.estimote:sdk:0.10.8] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.estimote\sdk\0.10.8\AndroidManifest.xml:22:5-37:19
-MERGED from [CieParaboleSNotificatio1Uv:android-beacon-library-2.9.2:unspecified] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\CieParaboleSNotificatio1Uv\android-beacon-library-2.9.2\unspecified\AndroidManifest.xml:21:5-40:19
-	android:label
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:12:9-41
-	android:supportsRtl
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:13:9-35
-	android:allowBackup
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:10:9-35
-	android:icon
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:11:9-38
-	android:theme
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:14:9-40
-	android:name
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:9:9-38
-activity#com.CieParabole.CieParaboleSNotificatio1Uv.MainActivity
-ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:16:9-21:20
-	android:name
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:16:19-47
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:17:13-20:29
-action#android.intent.action.MAIN
-ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:18:17-69
-	android:name
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:18:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:19:17-77
-	android:name
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:19:27-74
-activity#com.CieParabole.CieParaboleSNotificatio1Uv.DetectionBeacon
-ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:23:9-24:20
-	android:name
-		ADDED from C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\src\main\AndroidManifest.xml:23:19-50
-=======
 		ADDED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/AndroidManifest.xml:5:22-76
 uses-permission#android.permission.INTERNET
 ADDED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/AndroidManifest.xml:6:5-66
@@ -85,7 +36,7 @@ MERGED from [CieParaboleSNotificatio1Uv:android-beacon-library-2.9.2:unspecified
 	android:allowBackup
 		ADDED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/AndroidManifest.xml:10:9-35
 	android:icon
-		ADDED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/AndroidManifest.xml:11:9-38
 	android:theme
 		ADDED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/AndroidManifest.xml:14:9-40
 	android:name
@@ -108,7 +59,6 @@ activity#com.CieParabole.CieParaboleSNotificatio1Uv.DetectionBeacon
 ADDED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/AndroidManifest.xml:23:9-24:20
 	android:name
 		ADDED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/AndroidManifest.xml:23:19-50
->>>>>>> 215f2e798d512c02a27b25e34dfd472a3c4975bd
 uses-sdk
 INJECTED from /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:23.1.0] /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/AndroidManifest.xml:20:5-43
@@ -138,15 +88,9 @@ MERGED from [CieParaboleSNotificatio1Uv:android-beacon-library-2.9.2:unspecified
 	android:name
 		ADDED from [com.estimote:sdk:0.10.8] /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.estimote/sdk/0.10.8/AndroidManifest.xml:11:22-71
 uses-permission-sdk-23
-<<<<<<< HEAD
-ADDED from [com.estimote:sdk:0.10.8] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.estimote\sdk\0.10.8\AndroidManifest.xml:13:5-88
-	android:name
-		ADDED from [com.estimote:sdk:0.10.8] C:\Users\Aline\Downloads\cie-parabole-s-notificatio\CieParaboleSNotificatio1Uv\app\build\intermediates\exploded-aar\com.estimote\sdk\0.10.8\AndroidManifest.xml:13:29-85
-=======
 ADDED from [com.estimote:sdk:0.10.8] /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.estimote/sdk/0.10.8/AndroidManifest.xml:13:5-88
 	android:name
 		ADDED from [com.estimote:sdk:0.10.8] /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.estimote/sdk/0.10.8/AndroidManifest.xml:13:29-85
->>>>>>> 215f2e798d512c02a27b25e34dfd472a3c4975bd
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.estimote:sdk:0.10.8] /Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.estimote/sdk/0.10.8/AndroidManifest.xml:16:5-79
 	android:name

@@ -13,10 +13,6 @@
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"/>
-<<<<<<< HEAD
-=======
-
->>>>>>> 8089ff4201f7c322e0652010056790f72067d5fd
 
     <TextView
         android:layout_height="wrap_content"
@@ -30,13 +26,5 @@
         android:text="Recherche de Beacons..."
         android:layout_below="@+id/imageView"/>
 
-<<<<<<< HEAD
-=======
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:text="OUI"/>
->>>>>>> 8089ff4201f7c322e0652010056790f72067d5fd
 
 </RelativeLayout>

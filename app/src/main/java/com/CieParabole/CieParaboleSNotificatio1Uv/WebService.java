@@ -2,8 +2,8 @@ package com.CieParabole.CieParaboleSNotificatio1Uv;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -13,8 +13,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -37,7 +35,7 @@ public class WebService {
 
     }
 
-    public void addBeacon(){//String idEtablissement, String id, String nom){
+    public void addBeacon(String idEtablissement, String id, String nom){
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -51,10 +49,9 @@ public class WebService {
         }).start();
     }
 
-    public void getAllBeacons(){
-        String [] beaconsId;
+    public ArrayList<String> getAllBeacons(){
+        ArrayList<String> beacons = null;
         urlStr = "http://10.0.2.2:3000/api/beacons/";
-        String result;
         final ArrayList<String> beaconIds = new ArrayList<String>();
         Thread t1 = new Thread(new Runnable() {
             @Override
@@ -65,12 +62,43 @@ public class WebService {
         t1.start();
         try {
             t1.join();
+            String jsonStr = beaconIds.get(0);
+            JSONArray jsonArray = new JSONArray(jsonStr);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                beacons.add(jsonArray.getJSONObject(i).getString("id_beacon"));
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return beacons;
+    }
+
+    public boolean beaconExist(String BeaconId){
+        boolean exists = false;
+        urlStr = "http://10.0.2.2:3000/api/beacons/existId/"+BeaconId;
+        final ArrayList<String> existList = new ArrayList<String>();
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Get(existList);
+            }
+        });
+        t1.start();
+        try{
+            t1.join();
+            String result = existList.get(0);
+            if(result.equals("true")){
+                exists = true;
+            }
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Log.d("tesstt",beaconIds.toString());
+        return exists;
     }
-
 
 
     private void Get(ArrayList<String> arraylist){
@@ -93,7 +121,6 @@ public class WebService {
                 data = isw.read();
                 result+= current;
             }
-            Log.d("GET RESPONSE", result);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -102,12 +129,6 @@ public class WebService {
             }
         }
         arraylist.add(result);
-    }
-
-    private static String getResponseText(InputStream inStream) {
-        // very nice trick from
-        // http://weblogs.java.net/blog/pat/archive/2004/10/stupid_scanner_1.html
-        return new Scanner(inStream).useDelimiter("\\A").next();
     }
 
     private void sendPost(Map<String, String> parameters){
@@ -133,6 +154,7 @@ public class WebService {
             e.printStackTrace();
         }
     }
+
     private String readInputStreamToString(HttpURLConnection connection) {
         String result = null;
         StringBuffer sb = new StringBuffer();

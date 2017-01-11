@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.estimote.sdk.SystemRequirementsChecker;
 
+import java.util.ArrayList;
+
 //
 // Running into any issues? Drop us an email to: contact@estimote.com
 //
@@ -43,8 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        WebService ws = new WebService();
-        ws.getAllBeacons();
+
         sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         if(sharedPreferences.getString(keyFirstName,null)!=null) {
             Toast.makeText(this, "already registered", Toast.LENGTH_LONG).show();

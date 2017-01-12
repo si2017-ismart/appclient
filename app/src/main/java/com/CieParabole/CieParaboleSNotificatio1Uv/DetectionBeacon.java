@@ -1,7 +1,12 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
 
+<<<<<<< HEAD
 
+=======
+import android.app.Activity;
+import android.app.Dialog;
+>>>>>>> c5a5607b8676f9175b2a69310481b561d8944e14
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -35,7 +40,7 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     public static final String TAG = "BeaconsEverywhere";
     private BeaconManager beaconManager;
     private int notificationID = 0;
-    private String id;
+    private String id ;
     private String tokenSession = null;
     WebService service;
 
@@ -79,7 +84,7 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
 
     @Override
     public void onBeaconServiceConnect() {
-        final Region region = new Region("myBeaons",null, null, null);
+        final Region region = new Region("myBeacons",null, null, null);
         setContentView(R.layout.activty_detection_find);
         ImageButton buttonOui = (ImageButton) findViewById(R.id.buttonOUI);
         ImageButton buttonNon = (ImageButton) findViewById(R.id.buttonNON);
@@ -116,18 +121,18 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
         beaconManager.setRangeNotifier(new RangeNotifier() {
             @Override
             public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
-                double m=0;
+                double m = 0;
+
                 if (notificationID == 0) {
                     addNotification();
                 }
                 for (Beacon oneBeacon : beacons) {
-                    m = oneBeacon.getDistance();
-                    if(m<oneBeacon.getDistance()){
+                    if(m <= oneBeacon.getDistance()){
+                        m = oneBeacon.getDistance();
                         id = oneBeacon.getId1().toString() + oneBeacon.getId2().toString() + oneBeacon.getId3().toString();
+
                     }
                     Log.d(TAG, "distance: " + oneBeacon.getDistance() + " id:" + oneBeacon.getId1() + "/" + oneBeacon.getId2() + "/" + oneBeacon.getId3());
-
-
                 }
             }
         });
@@ -163,8 +168,10 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
 
     private void callWebService(){
         ArrayList<String> list = service.getAllBeacons();
+        Log.d("token", list.toString()+" "+id);
         if(checkbeacon(list)){
             tokenSession = service.requestHelp(this,id);
+            Log.d("token", tokenSession);
             setTimer();
         }
     }

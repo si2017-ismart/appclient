@@ -1,6 +1,7 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +43,8 @@ public class Rating extends Activity implements View.OnClickListener{
                 finish();
                 break;
             case R.id.buttonNoIntervention:
+                Intent intent = new Intent(this,DetectionBeacon.class);
+                startActivity(intent);
                 break;
         }
     }

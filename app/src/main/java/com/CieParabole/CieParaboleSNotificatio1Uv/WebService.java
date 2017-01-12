@@ -27,6 +27,7 @@ import java.util.Scanner;
  */
 
 public class WebService {
+    private static String ip = "http://192.168.12.228";
     private static String urlStr = "";
     private static final char PARAMETER_DELIMITER = '&';
     private static final char PARAMETER_EQUALS_CHAR = '=';
@@ -46,7 +47,7 @@ public class WebService {
 
     public boolean newPosition(final String token, final String beaconID){
         boolean newPosition = false;
-        urlStr = "http://10.0.2.2:3000/api/etablissements/sessions/setBeacon";
+        urlStr = ip+":3000/api/etablissements/sessions/setBeacon";
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -72,7 +73,7 @@ public class WebService {
 
     public boolean checkToken(String token){
         boolean tokenValid = false;
-        urlStr = "http://10.0.2.2:3000/api/etablissements/sessions/checkToken/"+token;
+        urlStr = ip+":3000/api/etablissements/sessions/checkToken/"+token;
         final ArrayList<String> tokenList = new ArrayList<String>();
         Thread t1 = new Thread(new Runnable() {
             @Override
@@ -103,7 +104,7 @@ public class WebService {
                 parameters.put("id_etablissement", idEtablissement);
                 parameters.put("id", id);
                 parameters.put("nom", nom);
-                urlStr = "http://10.0.2.2:3000/api/beacons/add";
+                urlStr = ip+":3000/api/beacons/add";
                 sendPost(parameters);
             }
         }).start();
@@ -115,7 +116,7 @@ public class WebService {
         SharedPreferences sharedPreferences = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         String name = sharedPreferences.getString(keyFirstName,null);
         String gender = sharedPreferences.getString(keyGender,null);
-        urlStr = "http://10.0.2.2:3000/api/beacons/needHelp/"+profil+"/"+name+"/"+gender+"/"+beaconID;
+        urlStr = ip+":3000/api/beacons/needHelp/"+profil+"/"+name+"/"+gender+"/"+beaconID;
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -135,7 +136,7 @@ public class WebService {
 
     public ArrayList<String> getAllBeacons(){
         ArrayList<String> beacons = new ArrayList<String>();
-        urlStr = "http://10.0.2.2:3000/api/beacons/";
+        urlStr = ip+":3000/api/beacons/";
         final ArrayList<String> beaconIds = new ArrayList<String>();
         Thread t1 = new Thread(new Runnable() {
             @Override
@@ -163,7 +164,7 @@ public class WebService {
 
     public boolean beaconExist(String BeaconId){
         boolean exists = false;
-        urlStr = "http://10.0.2.2:3000/api/beacons/existId/"+BeaconId;
+        urlStr = ip+":3000/api/beacons/existId/"+BeaconId;
         final ArrayList<String> existList = new ArrayList<String>();
         Thread t1 = new Thread(new Runnable() {
             @Override

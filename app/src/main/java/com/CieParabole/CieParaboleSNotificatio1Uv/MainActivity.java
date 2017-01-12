@@ -46,6 +46,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        tests
+//        WebService webService = new WebService();
+//        webService.beaconExist("b9407f30-f5f8-466e-aff9-25556b57fe6d4964721143");
+
         sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         if(sharedPreferences.getString(keyFirstName,null)!=null) {
             Toast.makeText(this, "already registered", Toast.LENGTH_LONG).show();
@@ -95,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             alert.setPositiveButton("OK", null);
             alert.setCancelable(true);
             alert.show();
-
         }
     }
 

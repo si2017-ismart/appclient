@@ -28,6 +28,10 @@
         "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/layout/abc_search_view.xml"
     },
     {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/layout/assistance.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/res/layout/assistance.xml"
+    },
+    {
         "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
         "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/layout/select_dialog_singlechoice_material.xml"
     },
@@ -40,58 +44,6 @@
         "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/layout/abc_activity_chooser_view.xml"
     },
     {
-<<<<<<< HEAD
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_detection.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\src\\main\\res\\layout\\activity_detection.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_alert_dialog_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_template_part_time.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_rating.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\src\\main\\res\\layout\\activity_rating.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_menu_item_action_area.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_tab_text.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_item.xml"
-=======
         "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
         "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/layout/notification_template_media.xml"
     },
@@ -142,7 +94,6 @@
     {
         "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
         "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/layout/notification_template_part_time.xml"
->>>>>>> 272210e9757970cd931778234bd13d173c359466
     },
     {
         "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",

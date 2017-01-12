@@ -1,14 +1,9 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
-<<<<<<< HEAD
 import android.app.Activity;
 import android.app.Dialog;
-
-=======
-
 import android.app.Activity;
 import android.app.Dialog;
->>>>>>> 272210e9757970cd931778234bd13d173c359466
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -190,14 +185,9 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     }
 
     public void setTimer() {
-        TokenCheckTimer timerTask = new TokenCheckTimer(service, tokenSession, this);
-        //running timer task as daemon thread
         Timer timer = new Timer(true);
+        TokenCheckTimer timerTask = new TokenCheckTimer(service, tokenSession, this, timer);
+        //running timer task as daemon thread
         timer.scheduleAtFixedRate(timerTask, 0, 10 * 1000);
-<<<<<<< HEAD
-=======
-
->>>>>>> 272210e9757970cd931778234bd13d173c359466
     }
-
 }

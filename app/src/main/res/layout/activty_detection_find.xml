@@ -11,6 +11,7 @@
 
     <ImageView
         android:layout_height="107dp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:id="@+id/imageViewFind"
         android:src="@drawable/logo"
@@ -22,8 +23,8 @@
         android:layout_width="wrap_content"
         android:id="@+id/textViewFind"
         android:textStyle="bold"
-        android:layout_marginTop="-20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
         android:textSize="30dp"
         android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
@@ -35,6 +36,7 @@
     <ImageButton
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginTop="20dp"
         android:background="@null"
         android:src="@drawable/oui"
         android:id="@+id/buttonOUI"
@@ -44,7 +46,7 @@
     <ImageButton
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="70dp"
         android:background="@null"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/nonmerci"

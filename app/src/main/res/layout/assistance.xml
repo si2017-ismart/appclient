@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_height="107dp"
+        android:layout_width="wrap_content"
+        android:id="@+id/imageViewFind"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"/>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textViewFind"
+        android:textStyle="bold"
+        android:layout_marginTop="-20dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="30dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:textColor="#ffffff"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAlignment="center"
+        android:text="J'arrive  au plus vite !"
+        android:layout_below="@+id/imageView"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textView"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:textColor="#cbb4f0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAlignment="center"
+        android:text="Votre appel a été pris en compte.\nun intervenant va arriver"
+        android:layout_below="@+id/imageView"/>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar" />
+
+</LinearLayout>

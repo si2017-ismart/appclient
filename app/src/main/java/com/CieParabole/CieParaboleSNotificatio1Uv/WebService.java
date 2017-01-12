@@ -6,6 +6,7 @@ import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -71,6 +72,7 @@ public class WebService {
         return newPosition;
     }
 
+
     public boolean checkToken(String token){
         boolean tokenValid = false;
         urlStr = ip+":3000/api/etablissements/sessions/checkToken/"+token;
@@ -95,6 +97,118 @@ public class WebService {
         }
         return tokenValid;
     }
+    public ArrayList<String> beaconExist(String beaconID){
+        boolean beaconExists = false;
+        String beaconId, nomEtablissement, idEtablissement, mailEtablissement, beaconExistsString;
+        ArrayList<String> resultArray = new ArrayList<String>();
+
+        urlStr = ip+":3000/api/beacons/existId/"+beaconID;
+        final ArrayList<String> beaconResult = new ArrayList<String>();
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Get(beaconResult);
+            }
+        });
+
+        t1.start();
+        try{
+            t1.join();
+            String jsonStr = beaconResult.get(0);
+
+            JSONObject jsonObject = new JSONObject(jsonStr);
+            beaconExistsString = jsonObject.getString("success");
+            beaconId = jsonObject.getJSONObject("data").getString("id_beacon");
+            nomEtablissement = jsonObject.getJSONObject("data").getJSONObject("etablissement").getString("nom");
+            idEtablissement = jsonObject.getJSONObject("data").getJSONObject("etablissement").getString("id");
+            mailEtablissement = jsonObject.getJSONObject("data").getJSONObject("etablissement").getString("mail");
+
+            resultArray.add(beaconExistsString);
+            resultArray.add(beaconId);
+            resultArray.add(nomEtablissement);
+            resultArray.add(idEtablissement);
+            resultArray.add(mailEtablissement);
+
+            Log.d("etablissement", "exist = "+beaconExistsString);
+            Log.d("etablissement", "beaconID = "+beaconId);
+            Log.d("etablissement", "nom etablissement = "+nomEtablissement);
+            Log.d("etablissement", "id etablissement = "+idEtablissement);
+            Log.d("etablissement", "mail etablissement = "+mailEtablissement);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return resultArray;
+    }
+
+
+        public ArrayList<ArrayList<String>> getBeaconsByEtablissement(String IDEtablissement){
+        boolean beaconExists = false;
+        String beaconId, nomBeacon, nomEtablissement, idEtablissement, mailEtablissement, positionX, positionY, portee;
+        ArrayList<ArrayList<String>> resultArray = new ArrayList<ArrayList<String>>();
+
+        urlStr = ip+":3000/api/beacons/getByEtablissement/"+ IDEtablissement;
+        final ArrayList<String> beaconResult = new ArrayList<String>();
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Get(beaconResult);
+            }
+        });
+
+        t1.start();
+        try{
+            t1.join();
+            String jsonStr = beaconResult.get(0);
+            
+            JSONArray jsonArray = new JSONArray(jsonStr);
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                beaconId = jsonObject.getString("id_beacon");
+                nomBeacon = jsonObject.getString("nom");
+                portee = jsonObject.getString("portee");
+
+                idEtablissement = jsonObject.getJSONObject("etablissement").getString("id");
+                mailEtablissement = jsonObject.getJSONObject("etablissement").getString("mail");
+                nomEtablissement = jsonObject.getJSONObject("etablissement").getString("nom");
+
+                positionX = jsonObject.getJSONObject("position").getString("x");
+                positionY = jsonObject.getJSONObject("position").getString("y");
+
+                ArrayList<String> beaconData = new ArrayList<String>();
+                beaconData.add(beaconId);
+                beaconData.add(nomBeacon);
+                beaconData.add(portee);
+                beaconData.add(idEtablissement);
+                beaconData.add(mailEtablissement);
+                beaconData.add(nomEtablissement);
+                beaconData.add(positionX);
+                beaconData.add(positionY);
+
+                resultArray.add(beaconData);
+
+                Log.d("BeaconsByEtablissement", "beaconID = "+beaconId);
+                Log.d("BeaconsByEtablissement", "beaconNom = "+nomBeacon);
+                Log.d("BeaconsByEtablissement", "portee = "+portee);
+                Log.d("BeaconsByEtablissement", "nom etablissement = "+nomEtablissement);
+                Log.d("BeaconsByEtablissement", "id etablissement = "+idEtablissement);
+                Log.d("BeaconsByEtablissement", "mail etablissement = "+mailEtablissement);
+                Log.d("BeaconsByEtablissement", "mail etablissement = "+mailEtablissement);
+                Log.d("BeaconsByEtablissement", "positionX = " + positionX);
+                Log.d("BeaconsByEtablissement", "positionY = " + positionY);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return resultArray;
+    }
+
 
     public void addBeacon(final String idEtablissement, final String id, final String nom){
         new Thread(new Runnable() {
@@ -162,29 +276,7 @@ public class WebService {
         return beacons;
     }
 
-    public boolean beaconExist(String BeaconId){
-        boolean exists = false;
-        urlStr = ip+":3000/api/beacons/existId/"+BeaconId;
-        final ArrayList<String> existList = new ArrayList<String>();
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Get(existList);
-            }
-        });
-        t1.start();
-        try{
-            t1.join();
-            String result = existList.get(0);
-            if(result.equals("true")){
-                exists = true;
-            }
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return exists;
-    }
 
     private void Get(ArrayList<String> arraylist){
         String result = "";

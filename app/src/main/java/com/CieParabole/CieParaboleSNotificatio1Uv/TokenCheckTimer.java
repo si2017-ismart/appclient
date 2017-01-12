@@ -34,18 +34,13 @@ public class TokenCheckTimer extends TimerTask {
     }
 
     private void completeTask() {
-        try {
-            Log.d("ji", "completeTask:jkj ");
-            if( !service.checkToken(token)){
-                Log.d("ji", ""+service.checkToken(token));
-                timer.cancel();
-                Intent intent = new Intent(context,Rating.class);
-                context.startActivity(intent);
+        Log.d("ji", "completeTask:jkj ");
+        if( !service.checkToken(token)){
+            Log.d("ji", ""+service.checkToken(token));
+            timer.cancel();
+            Intent intent = new Intent(context,Rating.class);
+            context.startActivity(intent);
 
-            }
-            Thread.sleep(20000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }

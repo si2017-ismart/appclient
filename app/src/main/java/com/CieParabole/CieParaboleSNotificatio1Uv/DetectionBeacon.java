@@ -71,6 +71,7 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
         int id = v.getId();
         switch (id){
             case R.id.buttonOUI:
+                setContentView(R.layout.assistance);
                 callWebService();
                 break;
             case R.id.buttonNON:
@@ -174,9 +175,11 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     }
 
     public boolean checkbeacon(ArrayList<String> list){
-
+        Log.d("checkBeacon","kndkvndkjnvjker");
         for(int i=0; i<list.size(); i++){
-            if(list.get(i).equals(id)){
+            Log.d("checkbeacon", list.get(i));
+            if(list.get(i).trim().equals(id)){
+                Log.d("checkBeacon","return true");
                 return true;
             }
         }

@@ -75,7 +75,8 @@ public class WebService {
 
     public boolean checkToken(String token){
         boolean tokenValid = false;
-        urlStr = ip+":3000/api/etablissements/sessions/checkToken/"+token;
+        Log.d("tokennnnnnnn", token);
+        urlStr = ip+":3000/api/etablissements/sessions/checkToken/"+token.substring(1, token.length()-1);
         final ArrayList<String> tokenList = new ArrayList<String>();
         Thread t1 = new Thread(new Runnable() {
             @Override
@@ -88,7 +89,8 @@ public class WebService {
         try{
             t1.join();
             String result = tokenList.get(0);
-            if(result.equals("true")){
+            Log.d("result", result);
+            if(result.trim().equals("true")){
                 tokenValid = true;
             }
 
@@ -225,6 +227,7 @@ public class WebService {
     }
 
     public String requestHelp(Context context, String beaconID){
+        Log.d("requestHelp","begin request help");
         final ArrayList<String> token = new ArrayList<String>();
         String tokenString = null;
         SharedPreferences sharedPreferences = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
@@ -238,6 +241,8 @@ public class WebService {
             }
         });
         t1.start();
+        Log.d("requestHelp","begin after thread start");
+
         try{
             t1.join();
             tokenString = token.get(0);
@@ -245,6 +250,7 @@ public class WebService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        Log.d("requestHelp", "before return "+tokenString);
         return tokenString;
     }
 

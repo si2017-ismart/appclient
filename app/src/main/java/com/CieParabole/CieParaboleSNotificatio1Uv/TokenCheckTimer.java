@@ -32,7 +32,8 @@ public class TokenCheckTimer extends TimerTask {
     private void completeTask() {
         try {
             Log.d("ji", "completeTask:jkj ");
-            if( !service.checkToken(token)){
+            if( service.checkToken(token)){
+                Log.d("ji", ""+service.checkToken(token));
                 this.cancel();
                 Intent intent = new Intent(context,Rating.class);
                 context.startActivity(intent);

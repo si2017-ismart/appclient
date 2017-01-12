@@ -1,8 +1,14 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
+<<<<<<< HEAD
 import android.app.Activity;
 import android.app.Dialog;
 
+=======
+
+import android.app.Activity;
+import android.app.Dialog;
+>>>>>>> 272210e9757970cd931778234bd13d173c359466
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -36,7 +42,8 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     public static final String TAG = "BeaconsEverywhere";
     private BeaconManager beaconManager;
     private int notificationID = 0;
-    private String id ;
+    private String id ="b9407f30-f5f8-466e-aff9-25556b57fe6d4964721143";
+
     private String tokenSession = null;
     WebService service;
 
@@ -125,8 +132,7 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
                 for (Beacon oneBeacon : beacons) {
                     if(m <= oneBeacon.getDistance()){
                         m = oneBeacon.getDistance();
-                        id = oneBeacon.getId1().toString() + oneBeacon.getId2().toString() + oneBeacon.getId3().toString();
-
+//                        id = oneBeacon.getId1().toString() + oneBeacon.getId2().toString() + oneBeacon.getId3().toString();
                     }
                     Log.d(TAG, "distance: " + oneBeacon.getDistance() + " id:" + oneBeacon.getId1() + "/" + oneBeacon.getId2() + "/" + oneBeacon.getId3());
                 }
@@ -183,11 +189,15 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
 
     }
 
-    public void setTimer(){
-        TokenCheckTimer timerTask = new TokenCheckTimer(service,tokenSession,this);
+    public void setTimer() {
+        TokenCheckTimer timerTask = new TokenCheckTimer(service, tokenSession, this);
         //running timer task as daemon thread
         Timer timer = new Timer(true);
         timer.scheduleAtFixedRate(timerTask, 0, 10 * 1000);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 272210e9757970cd931778234bd13d173c359466
     }
 
 }

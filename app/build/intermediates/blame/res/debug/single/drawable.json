@@ -1,9 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
-        "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\drawable\\design_fab_background.xml"
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_text_cursor_material.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\beacon.png",
         "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\src\\main\\res\\drawable\\beacon.png"
     },
@@ -126,5 +127,129 @@
     {
         "merged": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
         "source": "C:\\Users\\Aline\\Downloads\\cie-parabole-s-notificatio\\CieParaboleSNotificatio1Uv\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable\\abc_dialog_material_background_light.xml"
+=======
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/nonmerci.png",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/res/drawable/nonmerci.png"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/weguide_fondappli.jpg",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/res/drawable/weguide_fondappli.jpg"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/logo.png",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/res/drawable/logo.png"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/background.png",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/res/drawable/background.png"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_light.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_dark.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/oui.png",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/res/drawable/oui.png"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/res/drawable/design_snackbar_background.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/res/drawable/design_fab_background.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/beacon.png",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/src/main/res/drawable/beacon.png"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/Users/jadhaddad/AndroidStudioProjects/CieParaboleSNotificatio1Uv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+>>>>>>> 272210e9757970cd931778234bd13d173c359466
     }
 ]

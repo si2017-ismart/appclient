@@ -1,24 +1,19 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
 
-import android.app.Activity;
+
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Looper;
 import android.os.RemoteException;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
+
 
 import org.altbeacon.beacon.Beacon;
 import org.altbeacon.beacon.BeaconConsumer;
@@ -48,7 +43,7 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detection);
-        WebService service = new WebService();
+        service = new WebService();
 
         beaconManager = BeaconManager.getInstanceForApplication(this);
 
@@ -90,10 +85,6 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
         ImageButton buttonNon = (ImageButton) findViewById(R.id.buttonNON);
         buttonOui.setOnClickListener(this);
         buttonNon.setOnClickListener(this);
-<<<<<<< HEAD
-
-=======
->>>>>>> abb812995b5256cfbb8e5f0da7df82312ffbc650
         beaconManager.setMonitorNotifier(new MonitorNotifier() {
             @Override
             public void didEnterRegion(Region region) {
@@ -190,7 +181,7 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
     }
 
     public void setTimer(){
-        TokenCheckTimer timerTask = new TokenCheckTimer(service,tokenSession);
+        TokenCheckTimer timerTask = new TokenCheckTimer(service,tokenSession,this);
         //running timer task as daemon thread
         Timer timer = new Timer(true);
         timer.scheduleAtFixedRate(timerTask, 0, 10 * 1000);

@@ -11,10 +11,13 @@ import java.util.TimerTask;
 
 /**
  * Created by Aline on 11/01/2017.
+ *
+ * Classe qui verifie que la session est toujours en cours
+ *
  */
 public class TokenCheckTimer extends TimerTask {
 
-
+    int i=0;
     private WebService service;
     private String token;
     private Context context;
@@ -37,6 +40,11 @@ public class TokenCheckTimer extends TimerTask {
     private void completeTask() {
         Log.d("ji", "completeTask:jkj ");
         if( !service.checkToken(token)){
+
+//            if(i==0){
+//                service.newPosition(token, id);
+//                i++;
+//            }
             Log.d("ji", ""+service.checkToken(token));
             timer.cancel();
             Intent intent = new Intent(context,Rating.class);

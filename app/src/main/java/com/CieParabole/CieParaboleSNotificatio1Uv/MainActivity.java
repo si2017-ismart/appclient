@@ -19,10 +19,11 @@ import com.estimote.sdk.SystemRequirementsChecker;
 
 import java.util.ArrayList;
 
-//
-// Running into any issues? Drop us an email to: contact@estimote.com
-//
-
+/**
+ *
+ * Activité d'inscription de l'utilisateur
+ *
+ * */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
@@ -46,10 +47,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        tests
-//        WebService webService = new WebService();
-//        webService.beaconExist("b9407f30-f5f8-466e-aff9-25556b57fe6d4964721143");
-
         sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         if(sharedPreferences.getString(keyFirstName,null)!=null) {
             Toast.makeText(this, "already registered", Toast.LENGTH_LONG).show();
@@ -68,6 +65,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         BSignup.setOnClickListener(this);
     }
 
+
+    /**
+     *  Faire l'inscription des donnees de l'utilisateurs, appel à l'activité DetectionBeacon
+     * */
     @Override
     public void onClick(View view) {
         if(checkEmptyFields()){
@@ -77,9 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void run() {
                     try {
-                        // Send data to server ....
-                        //
-                        // ------------------------
                         saveData();
                         Intent intent = new Intent(MainActivity.this, DetectionBeacon.class);
                         startActivity(intent);
@@ -102,6 +100,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * Verifier que touts les champs sont non vide
+     * */
     private boolean checkEmptyFields(){
         boolean allFilled;
 
@@ -115,6 +116,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return allFilled;
     }
 
+    /**
+     * Sauvegarder les informations de l'utilisateur sur le telephone.
+     * */
     private void saveData(){
         String fname, lname, gender;
         fname = ETFirstName.getText().toString();

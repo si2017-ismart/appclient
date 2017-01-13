@@ -11,6 +11,9 @@ import android.widget.RatingBar;
 
 /**
  * Created by jadhaddad on 1/11/17.
+ *
+ * Activité qui permet a l'utilisateur de mettre un score de satisfaction de sa session d'aide
+ *
  */
 
 public class Rating extends Activity implements View.OnClickListener{
@@ -25,6 +28,7 @@ public class Rating extends Activity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating);
+        //initialisation
         buttonOK = (Button)findViewById(R.id.buttonOK);
         buttonCancel = (Button) findViewById(R.id.buttonCANCEL);
         buttonNoIntervention = (Button) findViewById(R.id.buttonNoIntervention);
@@ -59,6 +63,10 @@ public class Rating extends Activity implements View.OnClickListener{
         }
     }
 
+    /**
+     * Affiche un dialog de confirmation du score
+     *
+     * */
     private void scoreSentDialog() {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);

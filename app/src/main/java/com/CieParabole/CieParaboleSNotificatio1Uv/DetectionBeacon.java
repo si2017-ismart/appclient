@@ -31,13 +31,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Timer;
 
-
+/**
+ *
+ * Activité qui gère la detection du beacon le plus proche.
+ *
+ * (les deplacements de l'utilisateur sont en partie commenté)
+ *
+ * */
 public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer,View.OnClickListener{
 
     public static final String TAG = "BeaconsEverywhere";
     private BeaconManager beaconManager;
     private int notificationID = 0;
-    private String id ="b9407f30-f5f8-466e-aff9-25556b57fe6d4964721143";
+    private String id;
 
     private String tokenSession = null;
     WebService service;
@@ -49,7 +55,6 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
         service = new WebService();
 
         beaconManager = BeaconManager.getInstanceForApplication(this);
-
         beaconManager.getBeaconParsers().add(new BeaconParser()
                 .setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
 
@@ -128,7 +133,7 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
                 for (Beacon oneBeacon : beacons) {
                     if(m <= oneBeacon.getDistance()){
                         m = oneBeacon.getDistance();
-//                        id = oneBeacon.getId1().toString() + oneBeacon.getId2().toString() + oneBeacon.getId3().toString();
+                        id = oneBeacon.getId1().toString() + oneBeacon.getId2().toString() + oneBeacon.getId3().toString();
                     }
                     Log.d(TAG, "distance: " + oneBeacon.getDistance() + " id:" + oneBeacon.getId1() + "/" + oneBeacon.getId2() + "/" + oneBeacon.getId3());
                 }
@@ -144,6 +149,12 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
 
 
     }
+
+    /**
+     *
+     * Creee une notification qu'un beacon est detecté
+     *
+     * */
     private void addNotification() {
         Intent resultIntent = new Intent(this, DetectionBeacon.class);
         PendingIntent resultPendingIntent = PendingIntent.getActivity(
@@ -174,6 +185,13 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
         }
     }
 
+    /**
+     *
+     * Verifie si le beacon detecté appartient bien à la liste des beacons enregistrés sur le serveur
+     * @param list un Arraylist contenant la liste des beacons enregistrés sur le serveur
+     * @return envoie si le beacon existe dans la liste des beacons enregistrés sur le serveur
+     *
+     * */
     public boolean checkbeacon(ArrayList<String> list){
         Log.d("checkBeacon","kndkvndkjnvjker");
         for(int i=0; i<list.size(); i++){
@@ -187,10 +205,15 @@ public class DetectionBeacon extends AppCompatActivity implements BeaconConsumer
 
     }
 
+    /**
+     *
+     * declencher un Timer qui appelle le web service chaque 5 secondes
+     *
+     * */
     public void setTimer() {
         Timer timer = new Timer(true);
         TokenCheckTimer timerTask = new TokenCheckTimer(service, tokenSession, this, timer);
         //running timer task as daemon thread
-        timer.scheduleAtFixedRate(timerTask, 0, 10 * 1000);
+        timer.scheduleAtFixedRate(timerTask, 0, 5 * 1000);
     }
 }

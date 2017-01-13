@@ -30,6 +30,9 @@ import javax.net.ssl.HttpsURLConnection;
 
 /**
  * Created by jadhaddad on 1/11/17.
+ *
+ * Classe qui sert a fournir toutes les communications avec les web services
+ *
  */
 
 public class WebService {
@@ -45,12 +48,15 @@ public class WebService {
     private String profil = "moteur";
 
 
-
-
-    public WebService(){
-
-    }
-
+    /**
+     *
+     * Mise à jour du beacon de la session
+     *
+     * @param token le token de la session
+     * @param beaconID l'identifiant du beacon
+     * @return un booleen true en cas de succès
+     *
+     * */
     public boolean newPosition(final String token, final String beaconID){
         boolean newPosition = false;
         urlStr = ip+":3000/api/etablissements/sessions/setBeacon";
@@ -81,7 +87,12 @@ public class WebService {
         return newPosition;
     }
 
-
+    /**
+     * Vérifie l'existence d'une session
+     *
+     * @param token le token de la session
+     * @return un booleen true si le token est toujours valide
+     * */
     public boolean checkToken(String token){
         boolean tokenValid = false;
         Log.d("tokennnnnnnn", token);
@@ -109,6 +120,15 @@ public class WebService {
         return tokenValid;
     }
 
+
+    /**
+     *
+     * Ajout de la satisfaction du user au log de sa session
+     *
+     * @param rating un entier de 1 à 5 representant la satisfaction
+     * @param token le token de la session
+     *
+     * */
     public void sendRating(final String token, final int rating){
         urlStr = ip+":3000/api/interventions/satisfaction";
 
@@ -136,7 +156,14 @@ public class WebService {
         Log.d("RATINGGGG", postResult);
     }
 
-
+    /**
+     *
+     * Vérifie l'existance d'un beacon et renvoie l'établissement qui le possède
+     *
+     * @param beaconID l'identifiant du beacon
+     * @return un Arraylist de String contenant: si le beacon existe, ID du beacon, nom de l'etablissement, ID de l'etablissement, mail de l'etablissement
+     *
+     * */
     public ArrayList<String> beaconExist(String beaconID){
         boolean beaconExists = false;
         String beaconId, nomEtablissement, idEtablissement, mailEtablissement, beaconExistsString;
@@ -157,11 +184,11 @@ public class WebService {
             String jsonStr = beaconResult.get(0);
 
             JSONObject jsonObject = new JSONObject(jsonStr);
-            beaconExistsString = jsonObject.getString("success");
+            beaconExistsString  = jsonObject.getString("success");
             beaconId = jsonObject.getJSONObject("data").getString("id_beacon");
-            nomEtablissement = jsonObject.getJSONObject("data").getJSONObject("etablissement").getString("nom");
-            idEtablissement = jsonObject.getJSONObject("data").getJSONObject("etablissement").getString("id");
-            mailEtablissement = jsonObject.getJSONObject("data").getJSONObject("etablissement").getString("mail");
+            nomEtablissement    = jsonObject.getJSONObject("data").getJSONObject("etablissement").getString("nom");
+            idEtablissement     = jsonObject.getJSONObject("data").getJSONObject("etablissement").getString("id");
+            mailEtablissement   = jsonObject.getJSONObject("data").getJSONObject("etablissement").getString("mail");
 
             resultArray.add(beaconExistsString);
             resultArray.add(beaconId);
@@ -183,7 +210,16 @@ public class WebService {
         return resultArray;
     }
 
-
+        /**
+         *
+         * Liste de tous les beacons d'un etablissement
+         *
+         *@param IDEtablissement l'identifiant de l'etablissement
+         *@return un Arraylist qui contient les informations des beacons representés par des Arraylist contenant : l'identifiant du beacon,
+         * nom du beacon, la portee du beacon, l'identifiant de l'etablissement, le mail de l'etablissement, le nom de l'etablissement, la position X, la position Y
+         *
+         *
+         * */
         public ArrayList<ArrayList<String>> getBeaconsByEtablissement(String IDEtablissement){
         boolean beaconExists = false;
         String beaconId, nomBeacon, nomEtablissement, idEtablissement, mailEtablissement, positionX, positionY, portee;
@@ -251,7 +287,14 @@ public class WebService {
 
 
 
-
+    /**
+     * Demande un jeton d'aide pour le client
+     *
+     * @param context le contexte de l'activité
+     * @param beaconID l'identifiant du beacon
+     * @return le token de la session
+     *
+     * */
     public String requestHelp(Context context, String beaconID){
         Log.d("requestHelp","begin request help");
         final ArrayList<String> token = new ArrayList<String>();
@@ -280,6 +323,12 @@ public class WebService {
         return tokenString;
     }
 
+    /**
+     *
+     * Liste de tous les beacons
+     * @return un Arraylist contenant les identifiants des beacons
+     *
+     * */
     public ArrayList<String> getAllBeacons(){
         ArrayList<String> beacons = new ArrayList<String>();
         urlStr = ip+":3000/api/beacons/";
@@ -309,7 +358,12 @@ public class WebService {
     }
 
 
-
+    /**
+     *
+     * Executer la requête GET et recevoir le resultat de la requête
+     * @param arraylist un Arraylist qui sert à recuperer le resultat de la requête GET
+     *
+     * */
     private void Get(ArrayList<String> arraylist){
         String result = "";
         URL url;
@@ -340,6 +394,13 @@ public class WebService {
         arraylist.add(result);
     }
 
+    /**
+     *
+     * Envoie la requete POST et stock l'information dans l'attribut postResult
+     *
+     * @param parameters un Object JSON contenant les parametres de la requete POST
+     *
+     * */
     private void sendPost(JSONObject parameters){
 
         URL url;
@@ -384,61 +445,5 @@ public class WebService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private String readInputStreamToString(HttpURLConnection connection) {
-        String result = null;
-        StringBuffer sb = new StringBuffer();
-        InputStream is = null;
-
-        try {
-            is = new BufferedInputStream(connection.getInputStream());
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-            String inputLine = "";
-            while ((inputLine = br.readLine()) != null) {
-                sb.append(inputLine);
-            }
-            result = sb.toString();
-        }
-        catch (Exception e) {
-            Log.i("webservcie", "Error reading InputStream");
-            result = null;
-        }
-        finally {
-            if (is != null) {
-                try {
-                    is.close();
-                }
-                catch (IOException e) {
-                    Log.i("webservice", "Error closing InputStream");
-                }
-            }
-        }
-
-        return result;
-    }
-
-    private static String createQueryStringForParameters(Map<String, String> parameters) {
-        StringBuilder parametersAsQueryString = new StringBuilder();
-        if (parameters != null) {
-            boolean firstParameter = true;
-
-            for (String parameterName : parameters.keySet()) {
-                if (!firstParameter) {
-                    parametersAsQueryString.append(PARAMETER_DELIMITER);
-                }
-
-                try {
-                    parametersAsQueryString.append(parameterName)
-                            .append(PARAMETER_EQUALS_CHAR)
-                            .append(URLEncoder.encode(parameters.get(parameterName), "UTF-8"));
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-
-                firstParameter = false;
-            }
-        }
-        return parametersAsQueryString.toString();
     }
 }

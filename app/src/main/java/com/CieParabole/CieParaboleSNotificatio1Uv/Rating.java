@@ -46,10 +46,9 @@ public class Rating extends Activity implements View.OnClickListener{
             case R.id.buttonOK:
                 int rating = (int)ratingBar.getRating();
                 webService.sendRating(token, rating);
-                finishAppDialog();
+                scoreSentDialog();
                 break;
             case R.id.buttonCANCEL:
-                finishAppDialog();
                 finish();
                 break;
             case R.id.buttonNoIntervention:
@@ -60,13 +59,21 @@ public class Rating extends Activity implements View.OnClickListener{
         }
     }
 
-    private void finishAppDialog() {
+    private void scoreSentDialog() {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("");
-        alert.setMessage("Please fill in all the fields to proceed");
+        alert.setTitle("Merci !");
+        alert.setMessage("Votre score a été envoyé");
         alert.setPositiveButton("OK", null);
         alert.setCancelable(true);
+        alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                Intent intent = new Intent(Rating.this, DetectionBeacon.class);
+                startActivity(intent);
+                Rating.this.finish();
+            }
+        });
         alert.show();
     }
 }

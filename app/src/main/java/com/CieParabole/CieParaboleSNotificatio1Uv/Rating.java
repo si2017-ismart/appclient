@@ -1,8 +1,10 @@
 package com.CieParabole.CieParaboleSNotificatio1Uv;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
@@ -16,6 +18,8 @@ public class Rating extends Activity implements View.OnClickListener{
     private Button buttonOK;
     private Button buttonCancel;
     private Button buttonNoIntervention;
+    private WebService webService;
+    private String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,10 @@ public class Rating extends Activity implements View.OnClickListener{
         buttonOK.setOnClickListener(this);
         buttonNoIntervention.setOnClickListener(this);
         buttonCancel.setOnClickListener(this);
+
+        webService = new WebService();
+        Intent intent = getIntent();
+        token = intent.getStringExtra("token");
     }
 
     @Override
@@ -36,16 +44,29 @@ public class Rating extends Activity implements View.OnClickListener{
         int id = v.getId();
         switch (id){
             case R.id.buttonOK:
-                float rating = ratingBar.getRating();
-                //send rating
+                int rating = (int)ratingBar.getRating();
+                webService.sendRating(token, rating);
+                finishAppDialog();
                 break;
             case R.id.buttonCANCEL:
+                finishAppDialog();
                 finish();
                 break;
             case R.id.buttonNoIntervention:
                 Intent intent = new Intent(this,DetectionBeacon.class);
                 startActivity(intent);
+                finish();
                 break;
         }
+    }
+
+    private void finishAppDialog() {
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("");
+        alert.setMessage("Please fill in all the fields to proceed");
+        alert.setPositiveButton("OK", null);
+        alert.setCancelable(true);
+        alert.show();
     }
 }

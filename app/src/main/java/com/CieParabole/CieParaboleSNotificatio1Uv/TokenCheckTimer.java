@@ -2,6 +2,7 @@ package com.CieParabole.CieParaboleSNotificatio1Uv;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 
 import java.util.Timer;
@@ -39,6 +40,7 @@ public class TokenCheckTimer extends TimerTask {
             Log.d("ji", ""+service.checkToken(token));
             timer.cancel();
             Intent intent = new Intent(context,Rating.class);
+            intent.putExtra("token",token);
             context.startActivity(intent);
 
         }

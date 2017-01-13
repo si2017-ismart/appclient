@@ -10,9 +10,12 @@ import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
@@ -22,6 +25,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
+import javax.net.ssl.HttpsURLConnection;
 
 /**
  * Created by jadhaddad on 1/11/17.
@@ -52,9 +57,13 @@ public class WebService {
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                Map<String, String> parameters = new HashMap<String, String>();
-                parameters.put("id_beacon", beaconID);
-                parameters.put("token", token);
+                JSONObject parameters = new JSONObject();
+                try {
+                    parameters.put("id_beacon", beaconID);
+                    parameters.put("token", token);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 sendPost(parameters);
             }
         });
@@ -99,6 +108,35 @@ public class WebService {
         }
         return tokenValid;
     }
+
+    public void sendRating(final String token, final int rating){
+        urlStr = ip+":3000/api/interventions/satisfaction";
+
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                JSONObject parameters   = new JSONObject();
+                try {
+                    parameters.put("token", token);
+                    parameters.put("satisfaction", rating);
+                    Log.d("RATINGGGG","token: "+token+"\nrating: "+rating);
+                    sendPost(parameters);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        t1.start();
+        try {
+            t1.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Log.d("RATINGGGG", postResult);
+    }
+
+
     public ArrayList<String> beaconExist(String beaconID){
         boolean beaconExists = false;
         String beaconId, nomEtablissement, idEtablissement, mailEtablissement, beaconExistsString;
@@ -212,19 +250,7 @@ public class WebService {
     }
 
 
-    public void addBeacon(final String idEtablissement, final String id, final String nom){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Map<String, String> parameters = new HashMap<String, String>();
-                parameters.put("id_etablissement", idEtablissement);
-                parameters.put("id", id);
-                parameters.put("nom", nom);
-                urlStr = ip+":3000/api/beacons/add";
-                sendPost(parameters);
-            }
-        }).start();
-    }
+
 
     public String requestHelp(Context context, String beaconID){
         Log.d("requestHelp","begin request help");
@@ -314,27 +340,48 @@ public class WebService {
         arraylist.add(result);
     }
 
-    private void sendPost(Map<String, String> parameters){
+    private void sendPost(JSONObject parameters){
 
+        URL url;
         try {
-            URL urlToRequest = new URL(urlStr);
-            HttpURLConnection urlConnection = (HttpURLConnection) urlToRequest.openConnection();
-            urlConnection.setDoOutput(true);
-            urlConnection.setRequestMethod("POST");
-            urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-            String postParameters = createQueryStringForParameters(parameters);
-            urlConnection.setFixedLengthStreamingMode(postParameters.getBytes().length);
+            url = new URL(urlStr);
 
-            //send the POST
-            PrintWriter out = new PrintWriter(urlConnection.getOutputStream());
-            out.print(postParameters);
-            out.close();
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setReadTimeout(15000);
+            conn.setConnectTimeout(15000);
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setRequestProperty("Accept", "application/json");
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
 
-            String str = readInputStreamToString(urlConnection);
-            postResult = str;
-            Log.d("post response", str);
+            postResult="";
+            OutputStream os = conn.getOutputStream();
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+            Log.d("json",parameters.toString());
+            writer.write(parameters.toString());
 
-        } catch(IOException e) {
+            writer.flush();
+            writer.close();
+            os.close();
+            int responseCode=conn.getResponseCode();
+            if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line=br.readLine()) != null) {
+                    postResult+=line;
+                    Log.d("testResult",postResult);
+                }
+            }
+            else {
+                String line;
+                BufferedReader br=new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+                while ((line=br.readLine()) != null) {
+                    postResult+=line;
+                    Log.d("resuslt",postResult);
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
